@@ -1,0 +1,26 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div class="header">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-9">
+        <h4><a href="" class="title"> DATAOCT BLOG</a></h4>
+      </div> <!-- Title -->
+      <div class="col-md-3" *ngIf="authService.isAuthenticated()">
+          <a href="/add-post" class="new-post">Add Post</a>
+          <button class="logout btn btn-default" (click)="logout()">Logout</button>
+      </div>
+
+
+      <div class="col-md-3" *ngIf="!authService.isAuthenticated()">
+
+        <a href="/login" class="login btn btn-default" style="font-size:25px">Login
+          <i class="material-icons" style="font-size:31px;color:crimson">fingerprint</i>  
+        </a>
+       
+        <a href="/register" class="register btn btn-default" style="font-size:25px">Register</a>
+      </div> <!-- Login and Register -->
+      
+    </div>
+  </div>
+</div>
