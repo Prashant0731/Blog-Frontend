@@ -44,13 +44,13 @@ var AddPostService = /** @class */ (function () {
         this.httpClient = httpClient;
     }
     AddPostService.prototype.addPost = function (postPayload) {
-        return this.httpClient.post('http://localhost:8080/api/posts/', postPayload);
+        return this.httpClient.post('http://13.127.71.50:8080/api/posts/', postPayload);
     };
     AddPostService.prototype.getAllPosts = function () {
-        return this.httpClient.get("http://localhost:8080/api/posts/all");
+        return this.httpClient.get("http://13.127.71.50:8080/api/posts/all");
     };
     AddPostService.prototype.getPost = function (permaLink) {
-        return this.httpClient.get('http://localhost:8080/api/posts/get/' + permaLink);
+        return this.httpClient.get('http://13.127.71.50:8080/api/posts/get/' + permaLink);
     };
     AddPostService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -399,7 +399,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(httpClient, localStoraqeService) {
         this.httpClient = httpClient;
         this.localStoraqeService = localStoraqeService;
-        this.url = 'http://localhost:8080/api/auth/';
+        this.url = 'http://13.127.71.50:8080/api/auth/';
     }
     AuthService.prototype.register = function (registerPayload) {
         return this.httpClient.post(this.url + 'signup', registerPayload);
