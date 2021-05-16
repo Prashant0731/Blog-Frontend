@@ -35,6 +35,8 @@ export class AddPostComponent implements OnInit {
   addPost() {
     this.postPayload.content = this.addPostForm.get('body').value;
     this.postPayload.title = this.addPostForm.get('title').value;
+    console.log("hello1")
+
     this.addpostService.addPost(this.postPayload).subscribe(data => {
       this.router.navigateByUrl('/');
     }, error => {

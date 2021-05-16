@@ -3,24 +3,39 @@
   <div class="container">
     <div class="row">
       
-      <div class="col-md-9">
-        <h4><a href="" class="title"> DATAOCT BLOG</a></h4>
+      <div class="col-md-5">
+        <h4><a href="" class="title"> Dataoct Technologies</a></h4>
       </div> <!-- Title -->
+
       <div class="col-md-3" *ngIf="authService.isAuthenticated()">
           <a href="/add-post" class="new-post">Add Post</a>
           <button class="logout btn btn-default" (click)="logout()">Logout</button>
       </div>
 
 
-      <div class="col-md-3" *ngIf="!authService.isAuthenticated()">
 
-        <a href="/login" class="login btn btn-default" style="font-size:25px">Login
-          <i class="material-icons" style="font-size:31px;color:crimson">fingerprint</i>  
+      <div class="col-md-5" *ngIf="!authService.isAuthenticated()">
+
+        <a href="/home" class="home btn btn-default" >Home
+          <!-- <i class="material-icons" style="font-size:31px;color:crimson">fingerprint</i>   -->
+        </a>
+
+        <a href="/home" class="product btn btn-default" >Product
+          <!-- <i class="material-icons" style="font-size:31px;color:crimson">fingerprint</i>   -->
+        </a>
+        
+        <a href="/blog" class="blog btn btn-default" >Blog
+          <!-- <i class="material-icons" style="font-size:31px;color:crimson">fingerprint</i>   -->
+        </a>
+
+        <a href="/login" class="login btn btn-success">Login
+          <!-- <i class="material-icons" style="font-size:31px;color:crimson">fingerprint</i>   -->
         </a>
        
-        <a href="/register" class="register btn btn-default" style="font-size:25px">Register</a>
+        <a href="/register" class="register btn btn-default">Register</a>
       </div> <!-- Login and Register -->
       
     </div>
+
   </div>
 </div>
