@@ -3,14 +3,29 @@
     <div class="row" *ngFor="let post of posts | async">
       <div class="blogpost">
         <br><br>
-        <h3><a href="/post/{{post.id}}" class="blog-title"> {{post.title}} </a></h3>
+        
+        <h3>
+          <a href="/post/{{post.id}}" class="blog-title">{{post.title}}</a>
+        </h3>
+
         <div>
-          <i class="fas fa-user"></i>  <p> <b>Author : </b> {{post.username}}   <!--  , <b>Created on : </b> {{post.createdOn}} </p>  -->
+          <i class="fas fa-user"></i>  <p> <b> Subject :  {{post.subject}} </b>  <!--  , <b>Created on : </b> {{post.createdOn}} </p>  -->
         </div>
+        
+
+        <div>
+          <i class="fas fa-user"></i>  
+          <p> 
+            Author :  {{post.username}} 
+            <!-- ,  <b>Created on : </b> {{post.createdOn | date  }}  -->
+          </p>  
+        </div>
+
         <!-- <p [innerHTML]="post.content"></p> -->
         <div>
-          <a type="button" href="/post/{{post.id}}" class="read-more btn btn- ">Read More</a>
+          <a type="button" href="/post/{{post.id}}" class="read-more btn btn-success">Read More</a>
         </div>
+
         <hr>
       </div>
       <hr>
