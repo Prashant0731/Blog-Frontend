@@ -423,11 +423,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AuthService = /** @class */ (function () {
+    //private url = 'http://localhost:8080/api/auth/';
     function AuthService(httpClient, localStoraqeService) {
         this.httpClient = httpClient;
         this.localStoraqeService = localStoraqeService;
-        // private url = 'http://13.127.71.50:8080/api/auth/';
-        this.url = 'http://localhost:8080/api/auth/';
+        this.url = 'http://13.127.71.50:8080/api/auth/';
     }
     AuthService.prototype.register = function (registerPayload) {
         return this.httpClient.post(this.url + 'signup', registerPayload);
