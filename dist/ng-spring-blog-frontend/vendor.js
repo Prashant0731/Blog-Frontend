@@ -74759,6 +74759,177 @@ var EditorModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./node_modules/jw-angular-pagination/fesm5/jw-angular-pagination.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/jw-angular-pagination/fesm5/jw-angular-pagination.js ***!
+  \***************************************************************************/
+/*! exports provided: JwPaginationComponent, JwPaginationModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JwPaginationComponent", function() { return JwPaginationComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JwPaginationModule", function() { return JwPaginationModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var jw_paginate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jw-paginate */ "./node_modules/jw-paginate/lib/jw-paginate.js");
+/* harmony import */ var jw_paginate__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jw_paginate__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
+
+
+
+
+var JwPaginationComponent = /** @class */ (function () {
+    function JwPaginationComponent() {
+        this.changePage = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"](true);
+        this.initialPage = 1;
+        this.pageSize = 10;
+        this.maxPages = 10;
+        this.pager = {};
+    }
+    JwPaginationComponent.prototype.ngOnInit = function () {
+        // set page if items array isn't empty
+        if (this.items && this.items.length) {
+            this.setPage(this.initialPage);
+        }
+    };
+    JwPaginationComponent.prototype.ngOnChanges = function (changes) {
+        // reset page if items array has changed
+        if (changes.items.currentValue !== changes.items.previousValue) {
+            this.setPage(this.initialPage);
+        }
+    };
+    JwPaginationComponent.prototype.setPage = function (page) {
+        // get new pager object for specified page
+        this.pager = jw_paginate__WEBPACK_IMPORTED_MODULE_2___default()(this.items.length, page, this.pageSize, this.maxPages);
+        // get new page of items from items array
+        var pageOfItems = this.items.slice(this.pager.startIndex, this.pager.endIndex + 1);
+        // call change page function in parent component
+        this.changePage.emit(pageOfItems);
+    };
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], JwPaginationComponent.prototype, "items", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])()
+    ], JwPaginationComponent.prototype, "changePage", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], JwPaginationComponent.prototype, "initialPage", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], JwPaginationComponent.prototype, "pageSize", void 0);
+    Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])()
+    ], JwPaginationComponent.prototype, "maxPages", void 0);
+    JwPaginationComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'jw-pagination',
+            template: "<ul *ngIf=\"pager.pages && pager.pages.length\" class=\"pagination\">\n    <li [ngClass]=\"{disabled:pager.currentPage === 1}\" class=\"page-item first-item\">\n        <a (click)=\"setPage(1)\" class=\"page-link\">First</a>\n    </li>\n    <li [ngClass]=\"{disabled:pager.currentPage === 1}\" class=\"page-item previous-item\">\n        <a (click)=\"setPage(pager.currentPage - 1)\" class=\"page-link\">Previous</a>\n    </li>\n    <li *ngFor=\"let page of pager.pages\" [ngClass]=\"{active:pager.currentPage === page}\" class=\"page-item number-item\">\n        <a (click)=\"setPage(page)\" class=\"page-link\">{{page}}</a>\n    </li>\n    <li [ngClass]=\"{disabled:pager.currentPage === pager.totalPages}\" class=\"page-item next-item\">\n        <a (click)=\"setPage(pager.currentPage + 1)\" class=\"page-link\">Next</a>\n    </li>\n    <li [ngClass]=\"{disabled:pager.currentPage === pager.totalPages}\" class=\"page-item last-item\">\n        <a (click)=\"setPage(pager.totalPages)\" class=\"page-link\">Last</a>\n    </li>\n</ul>"
+        })
+    ], JwPaginationComponent);
+    return JwPaginationComponent;
+}());
+
+var JwPaginationModule = /** @class */ (function () {
+    function JwPaginationModule() {
+    }
+    JwPaginationModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"]],
+            declarations: [JwPaginationComponent],
+            exports: [JwPaginationComponent]
+        })
+    ], JwPaginationModule);
+    return JwPaginationModule;
+}());
+
+/*
+ * Public API Surface of jw-pagination
+ */
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+//# sourceMappingURL=jw-angular-pagination.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/jw-paginate/lib/jw-paginate.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/jw-paginate/lib/jw-paginate.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+function paginate(totalItems, currentPage, pageSize, maxPages) {
+    if (currentPage === void 0) { currentPage = 1; }
+    if (pageSize === void 0) { pageSize = 10; }
+    if (maxPages === void 0) { maxPages = 10; }
+    // calculate total pages
+    var totalPages = Math.ceil(totalItems / pageSize);
+    // ensure current page isn't out of range
+    if (currentPage < 1) {
+        currentPage = 1;
+    }
+    else if (currentPage > totalPages) {
+        currentPage = totalPages;
+    }
+    var startPage, endPage;
+    if (totalPages <= maxPages) {
+        // total pages less than max so show all pages
+        startPage = 1;
+        endPage = totalPages;
+    }
+    else {
+        // total pages more than max so calculate start and end pages
+        var maxPagesBeforeCurrentPage = Math.floor(maxPages / 2);
+        var maxPagesAfterCurrentPage = Math.ceil(maxPages / 2) - 1;
+        if (currentPage <= maxPagesBeforeCurrentPage) {
+            // current page near the start
+            startPage = 1;
+            endPage = maxPages;
+        }
+        else if (currentPage + maxPagesAfterCurrentPage >= totalPages) {
+            // current page near the end
+            startPage = totalPages - maxPages + 1;
+            endPage = totalPages;
+        }
+        else {
+            // current page somewhere in the middle
+            startPage = currentPage - maxPagesBeforeCurrentPage;
+            endPage = currentPage + maxPagesAfterCurrentPage;
+        }
+    }
+    // calculate start and end item indexes
+    var startIndex = (currentPage - 1) * pageSize;
+    var endIndex = Math.min(startIndex + pageSize - 1, totalItems - 1);
+    // create an array of pages to ng-repeat in the pager control
+    var pages = Array.from(Array((endPage + 1) - startPage).keys()).map(function (i) { return startPage + i; });
+    // return object with all pager properties required by the view
+    return {
+        totalItems: totalItems,
+        currentPage: currentPage,
+        pageSize: pageSize,
+        totalPages: totalPages,
+        startPage: startPage,
+        endPage: endPage,
+        startIndex: startIndex,
+        endIndex: endIndex,
+        pages: pages
+    };
+}
+module.exports = paginate;
+
+
+/***/ }),
+
 /***/ "./node_modules/ngx-webstorage/dist/app.js":
 /*!*************************************************!*\
   !*** ./node_modules/ngx-webstorage/dist/app.js ***!

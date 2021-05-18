@@ -45,12 +45,15 @@ var AddPostService = /** @class */ (function () {
     }
     AddPostService.prototype.addPost = function (postPayload) {
         return this.httpClient.post('http://13.127.71.50:8080/api/posts/', postPayload);
+        //  return this.httpClient.post('http://localhost:8080/api/posts/', postPayload);
     };
     AddPostService.prototype.getAllPosts = function () {
         return this.httpClient.get("http://13.127.71.50:8080/api/posts/all");
+        //  return this.httpClient.get<Array<PostPayload>>("http://localhost:8080/api/posts/all");
     };
     AddPostService.prototype.getPost = function (permaLink) {
         return this.httpClient.get('http://13.127.71.50:8080/api/posts/get/' + permaLink);
+        //  return this.httpClient.get<PostPayload>('http://localhost:8080/api/posts/get/' + permaLink);
     };
     AddPostService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
@@ -72,7 +75,7 @@ var AddPostService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".add-post-content{\r\n  padding-top: 20px;\r\n}\r\n\r\n.new-post-title{\r\n  color: royalblue;\r\n}\r\n\r\n.post-content, .post-title{\r\n  color: royalblue;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRkLXBvc3QvYWRkLXBvc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2FkZC1wb3N0L2FkZC1wb3N0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWRkLXBvc3QtY29udGVudHtcclxuICBwYWRkaW5nLXRvcDogMjBweDtcclxufVxyXG5cclxuLm5ldy1wb3N0LXRpdGxle1xyXG4gIGNvbG9yOiByb3lhbGJsdWU7XHJcbn1cclxuXHJcbi5wb3N0LWNvbnRlbnQsIC5wb3N0LXRpdGxle1xyXG4gIGNvbG9yOiByb3lhbGJsdWU7XHJcbn1cclxuIl19 */"
+module.exports = ".add-post-content{\r\n  padding-top: 20px;\r\n}\r\n\r\n.new-post-title{\r\n  color: royalblue;\r\n}\r\n\r\n.post-content, .post-subject, .post-title{\r\n  color: royalblue;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWRkLXBvc3QvYWRkLXBvc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQjs7QUFFQTtFQUNFLGdCQUFnQjtBQUNsQiIsImZpbGUiOiJzcmMvYXBwL2FkZC1wb3N0L2FkZC1wb3N0LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuYWRkLXBvc3QtY29udGVudHtcclxuICBwYWRkaW5nLXRvcDogMjBweDtcclxufVxyXG5cclxuLm5ldy1wb3N0LXRpdGxle1xyXG4gIGNvbG9yOiByb3lhbGJsdWU7XHJcbn1cclxuXHJcbi5wb3N0LWNvbnRlbnQsIC5wb3N0LXN1YmplY3QsIC5wb3N0LXRpdGxle1xyXG4gIGNvbG9yOiByb3lhbGJsdWU7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -83,7 +86,7 @@ module.exports = ".add-post-content{\r\n  padding-top: 20px;\r\n}\r\n\r\n.new-po
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"add-post-content\">\r\n  <div class=\"container\">\r\n    <div>\r\n      <h3 class=\"new-post-title\">Create New Post</h3>\r\n    </div>\r\n    <hr>\r\n    <form [formGroup]=\"addPostForm\" (ngSubmit)=\"addPost()\">\r\n      <div class=\"form-group\">\r\n        <label class=\"post-title\">Title</label>\r\n        <input type=\"text\" [formControlName]=\"'title'\" class=\"form-control\" placeholder=\"Title\">\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <label class=\"post-content\">Body</label>\r\n        <editor [formControlName]=\"'body'\" [init]=\"{plugins: 'link'}\"></editor>\r\n      </div>\r\n      <div class=\"form-group\">\r\n        <button type=\"submit\" class=\"btn btn-primary\">Post</button>\r\n      </div>\r\n    </form >\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"add-post-content\">\r\n  <div class=\"container\">\r\n    <div>\r\n      <h3 class=\"new-post-title\">Create New Post</h3>\r\n    </div>\r\n    <hr>\r\n    <form [formGroup]=\"addPostForm\" (ngSubmit)=\"addPost()\">\r\n      <div class=\"form-group\">\r\n        <label class=\"post-title\">Title</label>\r\n        <input type=\"text\" [formControlName]=\"'title'\" class=\"form-control\" placeholder=\"Title\" required>\r\n      </div>\r\n\r\n      <div class=\"form-group\">  \r\n        <label class=\"post-subject\">Subject</label>\r\n        <input type=\"text\" [formControlName]=\"'subject'\" class=\"form-control\" placeholder=\"Subject\" required>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n        <label class=\"post-content\">Body</label>\r\n        <editor [formControlName]=\"'body'\" [init]=\"{plugins: 'link'}\"></editor>\r\n      </div>\r\n\r\n  <!-- TAG \r\n      <div class=\"form-group\">\r\n        <label class=\"post-title\">Tags</label>\r\n        <input type=\"text\" [formControlName]=\"'title'\" class=\"form-control\" placeholder=\"TAG\">\r\n      </div> \r\n  -->\r\n\r\n      <div class=\"form-group\">\r\n        <button type=\"submit\" class=\"btn btn-primary\">Post</button>\r\n      </div>\r\n    </form >\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -113,15 +116,21 @@ var AddPostComponent = /** @class */ (function () {
         this.router = router;
         this.title = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
         this.body = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
+        //pc
+        this.subject = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]('');
         this.addPostForm = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormGroup"]({
             title: this.title,
-            body: this.body
+            body: this.body,
+            //pc
+            subject: this.subject
         });
         this.postPayload = {
             id: '',
             content: '',
             title: '',
-            username: ''
+            username: '',
+            subject: '',
+            created_on: '' //pc
         };
     }
     AddPostComponent.prototype.ngOnInit = function () {
@@ -130,6 +139,8 @@ var AddPostComponent = /** @class */ (function () {
         var _this = this;
         this.postPayload.content = this.addPostForm.get('body').value;
         this.postPayload.title = this.addPostForm.get('title').value;
+        console.log("hello1");
+        this.postPayload.subject = this.addPostForm.get('subject').value;
         this.addpostService.addPost(this.postPayload).subscribe(function (data) {
             _this.router.navigateByUrl('/');
         }, function (error) {
@@ -222,14 +233,27 @@ __webpack_require__.r(__webpack_exports__);
 
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.title = 'ng-spring-blog-frontend';
+        this.title = 'Dataoct Technologies';
+        //  Pagination 
+        // This is the app component (app.component.ts) from the example, it creates a hardcoded array of items to be paged in the ngOnInit() method, 
+        //and updates the current page of items in the onChangePage() callback method.
+        this.items = [];
     }
+    AppComponent.prototype.ngOnInit = function () {
+        // an example array of 150 items to be paged
+        this.items = Array(150).fill(0).map(function (x, i) { return ({ id: (i + 1), name: "Item " + (i + 1) }); });
+    };
+    AppComponent.prototype.onChangePage = function (pageOfItems) {
+        // update current page of items
+        this.pageOfItems = pageOfItems;
+    };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], AppComponent);
     return AppComponent;
 }());
@@ -267,6 +291,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _http_client_interceptor__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./http-client-interceptor */ "./src/app/http-client-interceptor.ts");
 /* harmony import */ var _post_post_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./post/post.component */ "./src/app/post/post.component.ts");
 /* harmony import */ var _auth_guard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./auth.guard */ "./src/app/auth.guard.ts");
+/* harmony import */ var jw_angular_pagination__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! jw-angular-pagination */ "./node_modules/jw-angular-pagination/fesm5/jw-angular-pagination.js");
+
 
 
 
@@ -299,7 +325,8 @@ var AppModule = /** @class */ (function () {
                 _auth_register_success_register_success_component__WEBPACK_IMPORTED_MODULE_8__["RegisterSuccessComponent"],
                 _home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"],
                 _add_post_add_post_component__WEBPACK_IMPORTED_MODULE_14__["AddPostComponent"],
-                _post_post_component__WEBPACK_IMPORTED_MODULE_17__["PostComponent"]
+                _post_post_component__WEBPACK_IMPORTED_MODULE_17__["PostComponent"],
+                jw_angular_pagination__WEBPACK_IMPORTED_MODULE_19__["JwPaginationComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -399,7 +426,8 @@ var AuthService = /** @class */ (function () {
     function AuthService(httpClient, localStoraqeService) {
         this.httpClient = httpClient;
         this.localStoraqeService = localStoraqeService;
-        this.url = 'http://13.127.71.50:8080/api/auth/';
+        // private url = 'http://13.127.71.50:8080/api/auth/';
+        this.url = 'http://localhost:8080/api/auth/';
     }
     AuthService.prototype.register = function (registerPayload) {
         return this.httpClient.post(this.url + 'signup', registerPayload);
@@ -536,7 +564,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <h3>Register successful, click <a href=\"/login\">here</a> to Login</h3>\r\n</div>\r\n"
+module.exports = "<div class=\"container\">\r\n  <br><br><br><br><br><br>\r\n  <h5>\r\n    Hey,<br><br>\r\n    Thanks for signing up to Dataoct Technologies.<br>\r\n    Your registration is now confirmed.<br><br>\r\n\r\n    <a href=\"/login\">\r\n      <button  type=\"button\" class=\"btn btn-success\">\r\n        Login\r\n      </button>\r\n    </a>\r\n    <br><br>\r\n\r\n    Thanks,<br>\r\n    Dataoct Technologies\r\n    <br><br> \r\n  \r\n\r\n  </h5>\r\n  <h6 style=\"color: black;\">\r\n    If you ever have any questions,<br> \r\n    please don't hesitate to contact our team at info@dataoct.com<br><br>\r\n  </h6>\r\n\r\n</div>\r\n\r\n\r\n"
 
 /***/ }),
 
@@ -682,7 +710,7 @@ module.exports = ".header{\r\n  padding: 5px 20px;\r\n  background: black;\r\n}\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n<div class=\"header\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      \r\n      <div class=\"col-md-9\">\r\n        <h4><a href=\"\" class=\"title\"> DATAOCT BLOG</a></h4>\r\n      </div> <!-- Title -->\r\n      <div class=\"col-md-3\" *ngIf=\"authService.isAuthenticated()\">\r\n          <a href=\"/add-post\" class=\"new-post\">Add Post</a>\r\n          <button class=\"logout btn btn-default\" (click)=\"logout()\">Logout</button>\r\n      </div>\r\n\r\n\r\n      <div class=\"col-md-3\" *ngIf=\"!authService.isAuthenticated()\">\r\n\r\n        <a href=\"/login\" class=\"login btn btn-default\" style=\"font-size:25px\">Login\r\n          <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>  \r\n        </a>\r\n       \r\n        <a href=\"/register\" class=\"register btn btn-default\" style=\"font-size:25px\">Register</a>\r\n      </div> <!-- Login and Register -->\r\n      \r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n<div class=\"header\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      \r\n      <div class=\"col-md-5\">\r\n        <h4><a href=\"\" class=\"title\"> Dataoct Technologies</a></h4>\r\n      </div> <!-- Title -->\r\n\r\n      <div class=\"col-md-6\" *ngIf=\"authService.isAuthenticated()\">\r\n          <a href=\"/add-post\" class=\"new-post btn btn-success\">Add Post</a>\r\n          <button class=\"logout btn btn-default\" (click)=\"logout()\">Logout</button>\r\n      </div>\r\n\r\n\r\n\r\n      <div class=\"col-md-5\" *ngIf=\"!authService.isAuthenticated()\">\r\n\r\n        <a href=\"/home\" class=\"home btn btn-default\" >Home\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n\r\n        <a href=\"/home\" class=\"product btn btn-default\" >Product\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n        \r\n        <a href=\"/blog\" class=\"blog btn btn-default\" >Blog\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n\r\n        <a href=\"/login\" class=\"login btn btn-success\">Login\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n       \r\n        <a href=\"/register\" class=\"register btn btn-default\">Register</a>\r\n      </div> <!-- Login and Register -->\r\n      \r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -733,7 +761,7 @@ var HeaderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS5jb21wb25lbnQuY3NzIn0= */"
+module.exports = "\r\n.blog-title{\r\n    color:royalblue;\r\n    text-decoration: none;\r\n    /* padding-top: 10px;\r\n    float: right; \r\n    */\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUNBO0lBQ0ksZUFBZTtJQUNmLHFCQUFxQjtJQUNyQjs7S0FFQztFQUNIIiwiZmlsZSI6InNyYy9hcHAvaG9tZS9ob21lLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJcclxuLmJsb2ctdGl0bGV7XHJcbiAgICBjb2xvcjpyb3lhbGJsdWU7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgICAvKiBwYWRkaW5nLXRvcDogMTBweDtcclxuICAgIGZsb2F0OiByaWdodDsgXHJcbiAgICAqL1xyXG4gIH0iXX0= */"
 
 /***/ }),
 
@@ -744,7 +772,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\r\n  <div class=\"container\">\r\n    <div class=\"row\" *ngFor=\"let post of posts | async\">\r\n      <div class=\"blogpost\">\r\n        <h3><a href=\"/post/{{post.id}}\" class=\"blog-title\">{{post.title}}</a></h3>\r\n        <div>\r\n          <i class=\"fas fa-user\"></i> Author: <p>{{post.username}}</p>\r\n        </div>\r\n        <p [innerHTML]=\"post.content\"></p>\r\n        <div>\r\n          <a type=\"button\" href=\"/post/{{post.id}}\" class=\"read-more btn btn- \">Read More</a>\r\n        </div>\r\n        <hr>\r\n      </div>\r\n      <hr>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"content\">\r\n  <div class=\"container\">\r\n    <div class=\"row\" *ngFor=\"let post of posts | async\">\r\n      <div class=\"blogpost\">\r\n        <br><br>\r\n        \r\n        <h3>\r\n          <a href=\"/post/{{post.id}}\" class=\"blog-title\">{{post.title}}</a>\r\n        </h3>\r\n\r\n        <div>\r\n          <i class=\"fas fa-user\"></i>  <p> <b> Subject :  {{post.subject}} </b>  <!--  , <b>Created on : </b> {{post.createdOn}} </p>  -->\r\n        </div>\r\n        \r\n\r\n        <div>\r\n          <i class=\"fas fa-user\"></i>  \r\n          <p> \r\n            Author :  {{post.username}} \r\n            <!-- ,  <b>Created on : </b> {{post.createdOn | date  }}  -->\r\n          </p>  \r\n        </div>\r\n\r\n        <!-- <p [innerHTML]=\"post.content\"></p> -->\r\n        <div>\r\n          <a type=\"button\" href=\"/post/{{post.id}}\" class=\"read-more btn btn-success\">Read More</a>\r\n        </div>\r\n\r\n        <hr>\r\n      </div>\r\n      <hr>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n "
 
 /***/ }),
 
@@ -848,7 +876,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"content\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-1\"></div>\r\n      <div class=\"col-md-8\">\r\n        <h1 class=\"blog-title\">{{post.title}}</h1>\r\n        <span>\r\n                  <p>by {{post.username}}</p>\r\n              </span>\r\n        <hr>\r\n        <p [innerHTML]=\"post.content\"></p>\r\n        <hr>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"content\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      <div class=\"col-md-1\"></div>\r\n      <div class=\"col-md-8\">\r\n        <br><br><br>\r\n        \r\n        <h1 class=\"blog-title\">\r\n          <p>{{post.title}}</p>\r\n        </h1>\r\n\r\n        <span ng-non-bindable>\r\n          <p>Subject : {{post.subject}}</p>\r\n          <p>By : {{post.username}} \r\n            <!-- , Created On : {{post.created_on | date:'mediumDate' }}  -->\r\n          </p>\r\n        </span>\r\n        \r\n        <hr>\r\n        <p [innerHTML]=\"post.content\"></p>\r\n        <hr>\r\n      </div>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 

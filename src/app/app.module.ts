@@ -17,6 +17,8 @@ import {EditorModule} from '@tinymce/tinymce-angular';
 import {HttpClientInterceptor} from './http-client-interceptor';
 import {PostComponent} from './post/post.component';
 import {AuthGuard} from './auth.guard';
+import { JwPaginationComponent } from 'jw-angular-pagination';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {AuthGuard} from './auth.guard';
     RegisterSuccessComponent,
     HomeComponent,
     AddPostComponent,
-    PostComponent
+    PostComponent,
+    JwPaginationComponent 
   ],
   imports: [
     BrowserModule,
