@@ -18,6 +18,9 @@ import {HttpClientInterceptor} from './http-client-interceptor';
 import {PostComponent} from './post/post.component';
 import {AuthGuard} from './auth.guard';
 import { JwPaginationComponent } from 'jw-angular-pagination';
+import { ProductComponent } from './product/product.component';
+import { RelayOnComponent } from './product/Product-Components/relay-on/relay-on.component';
+import { TopContentComponent } from './product/Product-Components/top-content/top-content.component';
 
 
 @NgModule({
@@ -30,7 +33,10 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
     HomeComponent,
     AddPostComponent,
     PostComponent,
-    JwPaginationComponent 
+    JwPaginationComponent,
+    ProductComponent,
+    RelayOnComponent,
+    TopContentComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +46,7 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
     Ng2Webstorage.forRoot(),
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
+      {path: 'product', component: ProductComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'post/:id', component: PostComponent},
       {path: 'login', component: LoginComponent},

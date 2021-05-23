@@ -292,6 +292,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _post_post_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./post/post.component */ "./src/app/post/post.component.ts");
 /* harmony import */ var _auth_guard__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./auth.guard */ "./src/app/auth.guard.ts");
 /* harmony import */ var jw_angular_pagination__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! jw-angular-pagination */ "./node_modules/jw-angular-pagination/fesm5/jw-angular-pagination.js");
+/* harmony import */ var _product_product_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./product/product.component */ "./src/app/product/product.component.ts");
+/* harmony import */ var _product_Product_Components_relay_on_relay_on_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./product/Product-Components/relay-on/relay-on.component */ "./src/app/product/Product-Components/relay-on/relay-on.component.ts");
+/* harmony import */ var _product_Product_Components_top_content_top_content_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./product/Product-Components/top-content/top-content.component */ "./src/app/product/Product-Components/top-content/top-content.component.ts");
+
+
+
 
 
 
@@ -326,7 +332,10 @@ var AppModule = /** @class */ (function () {
                 _home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"],
                 _add_post_add_post_component__WEBPACK_IMPORTED_MODULE_14__["AddPostComponent"],
                 _post_post_component__WEBPACK_IMPORTED_MODULE_17__["PostComponent"],
-                jw_angular_pagination__WEBPACK_IMPORTED_MODULE_19__["JwPaginationComponent"]
+                jw_angular_pagination__WEBPACK_IMPORTED_MODULE_19__["JwPaginationComponent"],
+                _product_product_component__WEBPACK_IMPORTED_MODULE_20__["ProductComponent"],
+                _product_Product_Components_relay_on_relay_on_component__WEBPACK_IMPORTED_MODULE_21__["RelayOnComponent"],
+                _product_Product_Components_top_content_top_content_component__WEBPACK_IMPORTED_MODULE_22__["TopContentComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -336,6 +345,7 @@ var AppModule = /** @class */ (function () {
                 ngx_webstorage__WEBPACK_IMPORTED_MODULE_12__["Ng2Webstorage"].forRoot(),
                 _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"].forRoot([
                     { path: '', component: _home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"] },
+                    { path: 'product', component: _product_product_component__WEBPACK_IMPORTED_MODULE_20__["ProductComponent"] },
                     { path: 'register', component: _auth_register_register_component__WEBPACK_IMPORTED_MODULE_6__["RegisterComponent"] },
                     { path: 'post/:id', component: _post_post_component__WEBPACK_IMPORTED_MODULE_17__["PostComponent"] },
                     { path: 'login', component: _auth_login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"] },
@@ -423,7 +433,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AuthService = /** @class */ (function () {
-    //private url = 'http://localhost:8080/api/auth/';
+    // private url = 'http://localhost:8080/api/auth/';
     function AuthService(httpClient, localStoraqeService) {
         this.httpClient = httpClient;
         this.localStoraqeService = localStoraqeService;
@@ -699,7 +709,7 @@ var RegisterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".header{\r\n  padding: 5px 20px;\r\n  background: black;\r\n}\r\n\r\n.title{\r\n  color: aliceblue;\r\n  text-decoration: none;\r\n}\r\n\r\n.login,.register{\r\n  float: right;\r\n  text-decoration: none;\r\n  color: aliceblue;\r\n  padding-top: 10px;\r\n}\r\n\r\n.logout,.new-post{\r\n  float: right;\r\n  color: aliceblue;\r\n  padding-top: 10px;\r\n}\r\n\r\n.logout:hover, .new-post:hover{\r\n  color: aliceblue;\r\n  text-decoration: none;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQWlCO0VBQ2pCLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSxZQUFZO0VBQ1oscUJBQXFCO0VBQ3JCLGdCQUFnQjtFQUNoQixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixxQkFBcUI7QUFDdkIiLCJmaWxlIjoic3JjL2FwcC9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaGVhZGVye1xyXG4gIHBhZGRpbmc6IDVweCAyMHB4O1xyXG4gIGJhY2tncm91bmQ6IGJsYWNrO1xyXG59XHJcblxyXG4udGl0bGV7XHJcbiAgY29sb3I6IGFsaWNlYmx1ZTtcclxuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbn1cclxuXHJcbi5sb2dpbiwucmVnaXN0ZXJ7XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxuICBjb2xvcjogYWxpY2VibHVlO1xyXG4gIHBhZGRpbmctdG9wOiAxMHB4O1xyXG59XHJcblxyXG4ubG9nb3V0LC5uZXctcG9zdHtcclxuICBmbG9hdDogcmlnaHQ7XHJcbiAgY29sb3I6IGFsaWNlYmx1ZTtcclxuICBwYWRkaW5nLXRvcDogMTBweDtcclxufVxyXG5cclxuLmxvZ291dDpob3ZlciwgLm5ldy1wb3N0OmhvdmVye1xyXG4gIGNvbG9yOiBhbGljZWJsdWU7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG59XHJcblxyXG4iXX0= */"
+module.exports = ".header{\r\n  padding: 5px 20px;\r\n  background: black;\r\n}\r\n\r\n.title, .product{\r\n  color: aliceblue;\r\n  text-decoration: none;\r\n}\r\n\r\n.login,.register{\r\n  float: right;\r\n  text-decoration: none;\r\n  color: aliceblue;\r\n  padding-top: 10px;\r\n}\r\n\r\n.logout,.new-post{\r\n  float: right;\r\n  color: aliceblue;\r\n  padding-top: 10px;\r\n}\r\n\r\n.logout:hover, .new-post:hover{\r\n  color: aliceblue;\r\n  text-decoration: none;\r\n}\r\n\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQWlCO0VBQ2pCLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixxQkFBcUI7QUFDdkI7O0FBRUE7RUFDRSxZQUFZO0VBQ1oscUJBQXFCO0VBQ3JCLGdCQUFnQjtFQUNoQixpQkFBaUI7QUFDbkI7O0FBRUE7RUFDRSxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGlCQUFpQjtBQUNuQjs7QUFFQTtFQUNFLGdCQUFnQjtFQUNoQixxQkFBcUI7QUFDdkIiLCJmaWxlIjoic3JjL2FwcC9oZWFkZXIvaGVhZGVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuaGVhZGVye1xyXG4gIHBhZGRpbmc6IDVweCAyMHB4O1xyXG4gIGJhY2tncm91bmQ6IGJsYWNrO1xyXG59XHJcblxyXG4udGl0bGUsIC5wcm9kdWN0e1xyXG4gIGNvbG9yOiBhbGljZWJsdWU7XHJcbiAgdGV4dC1kZWNvcmF0aW9uOiBub25lO1xyXG59XHJcblxyXG4ubG9naW4sLnJlZ2lzdGVye1xyXG4gIGZsb2F0OiByaWdodDtcclxuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgY29sb3I6IGFsaWNlYmx1ZTtcclxuICBwYWRkaW5nLXRvcDogMTBweDtcclxufVxyXG5cclxuLmxvZ291dCwubmV3LXBvc3R7XHJcbiAgZmxvYXQ6IHJpZ2h0O1xyXG4gIGNvbG9yOiBhbGljZWJsdWU7XHJcbiAgcGFkZGluZy10b3A6IDEwcHg7XHJcbn1cclxuXHJcbi5sb2dvdXQ6aG92ZXIsIC5uZXctcG9zdDpob3ZlcntcclxuICBjb2xvcjogYWxpY2VibHVlO1xyXG4gIHRleHQtZGVjb3JhdGlvbjogbm9uZTtcclxufVxyXG5cclxuIl19 */"
 
 /***/ }),
 
@@ -710,7 +720,7 @@ module.exports = ".header{\r\n  padding: 5px 20px;\r\n  background: black;\r\n}\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n<div class=\"header\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      \r\n      <div class=\"col-md-5\">\r\n        <h4><a href=\"\" class=\"title\"> Dataoct Technologies</a></h4>\r\n      </div> <!-- Title -->\r\n\r\n      <div class=\"col-md-6\" *ngIf=\"authService.isAuthenticated()\">\r\n          <a href=\"/add-post\" class=\"new-post btn btn-success\">Add Post</a>\r\n          <button class=\"logout btn btn-default\" (click)=\"logout()\">Logout</button>\r\n      </div>\r\n\r\n\r\n\r\n      <div class=\"col-md-5\" *ngIf=\"!authService.isAuthenticated()\">\r\n\r\n        <a href=\"/home\" class=\"home btn btn-default\" >Home\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n\r\n        <a href=\"/home\" class=\"product btn btn-default\" >Product\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n        \r\n        <a href=\"/blog\" class=\"blog btn btn-default\" >Blog\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n\r\n        <a href=\"/login\" class=\"login btn btn-success\">Login\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n       \r\n        <a href=\"/register\" class=\"register btn btn-default\">Register</a>\r\n      </div> <!-- Login and Register -->\r\n      \r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">\r\n<div class=\"header\">\r\n  <div class=\"container\">\r\n    <div class=\"row\">\r\n      \r\n      <div class=\"col-md-5\">\r\n        <h2><a href=\"\" class=\"title\"> Dataoct Technologies</a></h2>\r\n      </div> <!-- Title -->\r\n\r\n      <div class=\"col-md-6\" *ngIf=\"authService.isAuthenticated()\">\r\n          <a href=\"/add-post\" class=\"new-post btn btn-success\">Add Post</a>\r\n          <button class=\"logout btn btn-default\" (click)=\"logout()\">Logout</button>\r\n      </div>\r\n\r\n\r\n\r\n      <div class=\"col-md-7\" *ngIf=\"!authService.isAuthenticated()\">\r\n\r\n        <a href=\"/home\" class=\"home btn btn-default\" >Home\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n\r\n        <a href=\"/product\" class=\"product btn btn-default\" >Product\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n        \r\n        <a href=\"/blog\" class=\"blog btn btn-default\" >Blog\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n\r\n        <a href=\"/login\" class=\"login btn btn-success\">Login\r\n          <!-- <i class=\"material-icons\" style=\"font-size:31px;color:crimson\">fingerprint</i>   -->\r\n        </a>\r\n       \r\n        <a href=\"/register\" class=\"register btn btn-default\">Register</a>\r\n      </div> <!-- Login and Register -->\r\n      \r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -924,6 +934,192 @@ var PostComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"], _add_post_service__WEBPACK_IMPORTED_MODULE_3__["AddPostService"]])
     ], PostComponent);
     return PostComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/product/Product-Components/relay-on/relay-on.component.css":
+/*!****************************************************************************!*\
+  !*** ./src/app/product/Product-Components/relay-on/relay-on.component.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3QvUHJvZHVjdC1Db21wb25lbnRzL3JlbGF5LW9uL3JlbGF5LW9uLmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/product/Product-Components/relay-on/relay-on.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/product/Product-Components/relay-on/relay-on.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row m-t-40\">\n    <!-- Column -->\n    <div class=\"col-md-4 wrap-feature1-box\" *ngFor='let relay of relayOn'>\n        <div class=\"card card-shadow\" data-aos=\"fade-right\" data-aos-duration=\"1200\">\n            <div class=\"card-body p-40 text-center\">\n                <div class=\"icon-space display-5\">\n                    <i [class]=\"relay.icon\"></i>\n                </div>\n                <h5 class=\"font-medium\">{{relay.field}}</h5>\n                <p class=\"m-t-20\">\n                    {{relay.fieldText}}\n                </p>\n            </div>\n        </div>\n    </div>\n\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/product/Product-Components/relay-on/relay-on.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/product/Product-Components/relay-on/relay-on.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: RelayOnComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RelayOnComponent", function() { return RelayOnComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var RelayOnComponent = /** @class */ (function () {
+    function RelayOnComponent() {
+        this.relayOn = [
+            {
+                icon: 'sl-icon-target text-info-gradiant',
+                field: 'Retargeting Market',
+                fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.'
+            },
+            {
+                icon: 'sl-icon-mouse text-info-gradiant',
+                field: 'Fruitful Results',
+                fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.'
+            },
+            {
+                icon: 'sl-icon-earphones-alt text-info-gradiant',
+                field: 'Instant Solutions',
+                fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.'
+            }
+        ];
+    }
+    RelayOnComponent.prototype.ngOnInit = function () {
+    };
+    RelayOnComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-relay-on',
+            template: __webpack_require__(/*! ./relay-on.component.html */ "./src/app/product/Product-Components/relay-on/relay-on.component.html"),
+            styles: [__webpack_require__(/*! ./relay-on.component.css */ "./src/app/product/Product-Components/relay-on/relay-on.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], RelayOnComponent);
+    return RelayOnComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/product/Product-Components/top-content/top-content.component.css":
+/*!**********************************************************************************!*\
+  !*** ./src/app/product/Product-Components/top-content/top-content.component.css ***!
+  \**********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3QvUHJvZHVjdC1Db21wb25lbnRzL3RvcC1jb250ZW50L3RvcC1jb250ZW50LmNvbXBvbmVudC5jc3MifQ== */"
+
+/***/ }),
+
+/***/ "./src/app/product/Product-Components/top-content/top-content.component.html":
+/*!***********************************************************************************!*\
+  !*** ./src/app/product/Product-Components/top-content/top-content.component.html ***!
+  \***********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row wrap-feature-22\">\r\n  <!-- Column -->\r\n  <div class=\"col-lg-6\" data-aos=\"flip-up\" data-aos-duration=\"1200\">\r\n    <img [src]=\"imagePath\" class=\"rounded img-responsive\" alt=\"wrapkit\" />\r\n  </div>\r\n  <!-- Column -->\r\n  <div class=\"col-lg-6 no-trans\">\r\n    <div class=\"text-box\">\r\n      <small class=\"text-info font-medium\">Make your site in No-Time</small>\r\n      <h3 class=\"font-light\">\r\n        WrapKit helps you to\r\n        <span class=\"text-info\">build your project</span> in record time with\r\n        fun making it.\r\n      </h3>\r\n      <p>\r\n        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam\r\n        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat\r\n        volutpat.\r\n      </p>\r\n      <p>\r\n        Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquis\r\n        would be good to have.\r\n      </p>\r\n\r\n      <a\r\n        class=\"btn btn-info-gradiant btn-md btn-arrow m-t-20\"\r\n        data-toggle=\"collapse\"\r\n        routerLink=\"#\"\r\n      >\r\n        <span\r\n          >View Other Features\r\n          <i class=\"ti-arrow-right\"></i>\r\n        </span>\r\n      </a>\r\n    </div>\r\n  </div>\r\n  <!-- Column -->\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/product/Product-Components/top-content/top-content.component.ts":
+/*!*********************************************************************************!*\
+  !*** ./src/app/product/Product-Components/top-content/top-content.component.ts ***!
+  \*********************************************************************************/
+/*! exports provided: TopContentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TopContentComponent", function() { return TopContentComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var TopContentComponent = /** @class */ (function () {
+    function TopContentComponent() {
+        this.imagePath = '../assets/images/innerpage/about-us.jpg';
+    }
+    TopContentComponent.prototype.ngOnInit = function () {
+    };
+    TopContentComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-top-content',
+            template: __webpack_require__(/*! ./top-content.component.html */ "./src/app/product/Product-Components/top-content/top-content.component.html"),
+            styles: [__webpack_require__(/*! ./top-content.component.css */ "./src/app/product/Product-Components/top-content/top-content.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], TopContentComponent);
+    return TopContentComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/product/product.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/product/product.component.css ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/*******************\r\ncommon-innerpage-banner\r\n*******************/\r\n/* .banner-innerpage{\r\n    padding:150px 0 100px;\r\n    background-size:cover;\r\n    background-position: center ;\r\n} \r\n */\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcHJvZHVjdC9wcm9kdWN0LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O21CQUVtQjtBQUNuQjs7Ozs7RUFLRSIsImZpbGUiOiJzcmMvYXBwL3Byb2R1Y3QvcHJvZHVjdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLyoqKioqKioqKioqKioqKioqKipcclxuY29tbW9uLWlubmVycGFnZS1iYW5uZXJcclxuKioqKioqKioqKioqKioqKioqKi9cclxuLyogLmJhbm5lci1pbm5lcnBhZ2V7XHJcbiAgICBwYWRkaW5nOjE1MHB4IDAgMTAwcHg7XHJcbiAgICBiYWNrZ3JvdW5kLXNpemU6Y292ZXI7XHJcbiAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXIgO1xyXG59IFxyXG4gKi9cclxuIl19 */"
+
+/***/ }),
+
+/***/ "./src/app/product/product.component.html":
+/*!************************************************!*\
+  !*** ./src/app/product/product.component.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n<div\n  class=\"banner-innerpage\" \n  style=\"background-image: url(assets/images/landingpage/banner-bg2.jpg)\" \n\n  \n>\n  <div class=\"container\">\n    <!-- Row  -->\n    <div class=\"row justify-content-center\">\n      <!-- Column -->\n      <div class=\"col-lg-9 col-md-6 no-trans align-self-center text-center\">\n        <h1 class=\"title\">PRODUCT</h1>\n      </div>\n      <!-- Column -->\n    </div>\n  </div>\n</div>\n<br>\n<!-- ============================================================== -->\n<!-- Feature 22  -->\n<!-- ============================================================== -->\n\n<div class=\"spacer feature22\">\n  <div class=\"container\">\n    <app-top-content></app-top-content>\n  </div>\n</div>\n<!-- ============================================================== -->\n<!-- End Feature 22  -->\n<!-- ============================================================== -->\n<!-- ============================================================== -->\n<!-- Feature 1  -->\n<!-- ============================================================== -->\n<div class=\"bg-light spacer feature1\">\n  <div class=\"container\">\n    <!-- Row  -->\n    <div class=\"row justify-content-center\">\n      <div class=\"col-md-7 text-center no-trans\">\n        <h2 class=\"title\">Create beautiful Websites in Record Time</h2>\n        <h6 class=\"subtitle\">\n          You can relay on our amazing features list and also our customer\n          services will be great experience for you without doubt and in no-time\n        </h6>\n      </div>\n    </div>\n    <app-relay-on></app-relay-on>\n  </div>\n</div>\n<!-- ============================================================== -->\n<!-- End Feature 1  -->\n<!-- ============================================================== -->\n\n<!-- ============================================================== -->\n<!-- Call to action -->\n<!-- ============================================================== -->\n<div class=\"spacer\">\n  <div class=\"container\">\n    <div class=\"row justify-content-center m-b-30\">\n      <div class=\"col-md-7 text-center no-trans\">\n        <h2 class=\"title\">\n          Are you happy with what we offer? Grab your WrapKit Angular Blog Copy\n          Now\n        </h2>\n        <h6 class=\"subtitle\">\n          Yeah ! Its pretty cool about what you are offering and i starterd to\n          feel in love with your Amazing UI Kit. I want it Yea!\n        </h6>\n        <a\n          class=\"btn btn-info-gradiant btn-md btn-arrow m-t-20\"\n          data-toggle=\"collapse\"\n          href=\"#\"\n          ><span>View Details <i class=\"ti-arrow-right\"></i></span\n        ></a>\n      </div>\n    </div>\n  </div>\n</div>\n<!-- ============================================================== -->\n<!-- End Call to action -->\n<!-- ============================================================== -->\n<br>"
+
+/***/ }),
+
+/***/ "./src/app/product/product.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/product/product.component.ts ***!
+  \**********************************************/
+/*! exports provided: ProductComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProductComponent", function() { return ProductComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+
+
+var ProductComponent = /** @class */ (function () {
+    function ProductComponent() {
+    }
+    ProductComponent.prototype.ngOnInit = function () {
+    };
+    ProductComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-product',
+            template: __webpack_require__(/*! ./product.component.html */ "./src/app/product/product.component.html"),
+            styles: [__webpack_require__(/*! ./product.component.css */ "./src/app/product/product.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], ProductComponent);
+    return ProductComponent;
 }());
 
 

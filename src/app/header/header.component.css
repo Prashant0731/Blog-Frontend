@@ -3,7 +3,7 @@
   background: black;
 }
 
-.title{
+.title, .product{
   color: aliceblue;
   text-decoration: none;
 }
