@@ -21,6 +21,7 @@ import { JwPaginationComponent } from 'jw-angular-pagination';
 import { ProductComponent } from './product/product.component';
 import { RelayOnComponent } from './product/Product-Components/relay-on/relay-on.component';
 import { TopContentComponent } from './product/Product-Components/top-content/top-content.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TopContentComponent } from './product/Product-Components/top-content/to
     JwPaginationComponent,
     ProductComponent,
     RelayOnComponent,
-    TopContentComponent
+    TopContentComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,7 @@ import { TopContentComponent } from './product/Product-Components/top-content/to
     Ng2Webstorage.forRoot(),
     RouterModule.forRoot([
       {path: '', component: HomeComponent},
+      {path: 'footer', component: FooterComponent},
       {path: 'product', component: ProductComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'post/:id', component: PostComponent},

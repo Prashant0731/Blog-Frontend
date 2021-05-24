@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class TopContentComponent implements OnInit {
 
   imagePath='../assets/images/innerpage/about-us.jpg';
+  imagePath1='../assets/images/innerpage/about-us.jpg';
+  imagePath2='../assets/images/innerpage/about-us.jpg';
+  imagePath3='../assets/images/innerpage/about-us.jpg';
+  imagePath4='../assets/images/innerpage/about-us.jpg';
 
   constructor() { }
 

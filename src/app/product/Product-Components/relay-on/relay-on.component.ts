@@ -11,17 +11,17 @@ export class RelayOnComponent implements OnInit {
     {
       icon: 'sl-icon-target text-info-gradiant',
       field: 'Retargeting Market',
-      fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.'
+      fieldText: '-'
     },
     {
       icon: 'sl-icon-mouse text-info-gradiant',
       field: 'Fruitful Results',
-      fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.'
+      fieldText: '-'
     },
     {
       icon: 'sl-icon-earphones-alt text-info-gradiant',
       field: 'Instant Solutions',
-      fieldText: 'You can relay on our amazing features list and also our customer services will be great experience.'
+      fieldText: '-'
     }
   ];
 
