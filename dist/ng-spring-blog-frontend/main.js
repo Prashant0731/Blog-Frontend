@@ -44,17 +44,17 @@ var AddPostService = /** @class */ (function () {
         this.httpClient = httpClient;
     }
     AddPostService.prototype.addPost = function (postPayload) {
-        return this.httpClient.post('http://13.127.71.50:80/api/posts/', postPayload);
+        return this.httpClient.post('http://13.127.71.50:8080/api/posts/', postPayload);
         //  return this.httpClient.post('http://localhost:8080/api/posts/', postPayload);
         // return this.httpClient.post('http://dataoct.com/api/posts/', postPayload);
     };
     AddPostService.prototype.getAllPosts = function () {
-        return this.httpClient.get("http://13.127.71.50:80/api/posts/all");
+        return this.httpClient.get("http://13.127.71.50:8080/api/posts/all");
         // return this.httpClient.get<Array<PostPayload>>("http://localhost:8080/api/posts/all");
         //  return this.httpClient.get<Array<PostPayload>>("http://dataoct.com/api/posts/all");
     };
     AddPostService.prototype.getPost = function (permaLink) {
-        return this.httpClient.get('http://13.127.71.50:80/api/posts/get/' + permaLink);
+        return this.httpClient.get('http://13.127.71.50:8080/api/posts/get/' + permaLink);
         // return this.httpClient.get<PostPayload>('http://localhost:8080/api/posts/get/' + permaLink);
         // return this.httpClient.get<PostPayload>('http://dataoct.com/api/posts/get/' + permaLink);
     };
@@ -445,7 +445,7 @@ var AuthService = /** @class */ (function () {
     function AuthService(httpClient, localStoraqeService) {
         this.httpClient = httpClient;
         this.localStoraqeService = localStoraqeService;
-        this.url = 'http://13.127.71.50:80/api/auth/';
+        this.url = 'http://13.127.71.50:8080/api/auth/';
     }
     AuthService.prototype.register = function (registerPayload) {
         return this.httpClient.post(this.url + 'signup', registerPayload);
