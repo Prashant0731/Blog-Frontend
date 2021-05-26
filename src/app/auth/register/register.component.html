@@ -1,3 +1,9 @@
+<div
+class="banner-innerpage" 
+style="background-image: url(assets/images/background/login-register.jpg)"
+
+>
+  
 <div class="container justify-content-center">
   <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
@@ -17,6 +23,19 @@
       <label for="inputConfirmPassword" class="sr-only">Password</label>
       <input type="password" id="inputConfirmPassword" [formControlName]="'confirmPassword'" class="form-control" placeholder="Confirm Password" required="">
     </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+    <button class="btn btn-lg btn-success" type="submit">Sign up</button>
+    <br><br><br><br>
+
+    <hr>
+    <button class="btn btn-success btn-block">
+      <a href="/login" class="btn-success btn-block">Login</a>
+    </button>
+
+
   </form>
 </div>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+</div>
+
